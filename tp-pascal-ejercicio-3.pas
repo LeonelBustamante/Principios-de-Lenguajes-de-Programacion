@@ -1,5 +1,5 @@
 
-Program CalculoEnEsfera;
+Program ejercicio3;
 
 Const 
     PI =   3.141592;
@@ -13,6 +13,8 @@ Begin
     volumen := ((4/3)*PI)*(sqr(r)*r);
 End;
 
+
+
 Begin
     write('Ingrese el radio de la esfera: ');
     readln(radio);
@@ -21,5 +23,5 @@ Begin
     writeln('La superficie de la esfera es: ', superficie:8:4);
     writeln('El volumen de la esfera es: ', volumen:8:4);
 
-{En este caso se realiza en un procedimiento para que este pueda asignarse a 2 variables}
+(*En este caso se realiza en un procedimiento para que este pueda asignarse a 2 variables*)
 End.

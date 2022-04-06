@@ -1,5 +1,5 @@
 
-Program  operaciones;
+Program  ejercicio6;
 
 Var 
     x,y:   real;

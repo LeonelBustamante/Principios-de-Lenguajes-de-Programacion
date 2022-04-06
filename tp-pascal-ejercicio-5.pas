@@ -1,5 +1,5 @@
 
-Program esDivisible;
+Program ejercicio5;
 
 Var 
     x,y:   integer;

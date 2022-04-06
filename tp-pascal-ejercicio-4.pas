@@ -1,5 +1,5 @@
 
-Program esMayorQueCero;
+Program ejercicio4;
 
 Var 
     x:   real;

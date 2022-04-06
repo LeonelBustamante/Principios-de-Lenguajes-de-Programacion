@@ -1,5 +1,5 @@
 
-Program Traza;
+Program ejercicio1;
 
 Var a, b, c, d, s:   integer;
 Function alfa(e:integer; Var f:integer):   integer;
