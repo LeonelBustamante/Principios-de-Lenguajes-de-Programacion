@@ -1,28 +1,32 @@
 
-Program ejercicio11;
+Program ejercicio12;
 
 Var 
-    a:   real;
-    b:   integer;
-Function expo(x: real; n:integer):   real;
+    x:   integer;
+Procedure factores(numero: integer);
 
 Var 
-    i:   integer;
-    res    :   real;
+    factor:   integer;
 Begin
-    res := x;
-    For i := 0 To n Do
-        If i=0 Then
-            res := 1
-        Else
-            res := res*x;
-    expo := res;
+    factor := 2;
+    While numero <> 1 Do
+        Begin
+            If (numero Mod  factor) = 0 Then
+                Begin
+                    numero := numero Div factor;
+                    If numero < factor Then
+                        write(factor)
+                    Else
+                        write(factor, '.');
+                End
+            Else
+                factor := factor+1;
+        End;
 End;
 
 Begin
-    write('Ingrese la base: ');
-    readln(a);
-    write('Ingrese el exponente: ');
-    readln(b);
-    writeln('El resultado es= ', expo(a,b):   2:   2)    ;
+    write('Ingrese un numero a descomponer: ');
+    readln(x);
+    write('Sus factores primos son: ')    ;
+    factores(x)
 End.
