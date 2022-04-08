@@ -22,9 +22,10 @@ End;
 Procedure division(x,y: real);
 Begin
     If y=0 Then
-        resDivision =   0;
-    Else
-        resDivision =   x/y
+        resDivision =   0
+                        Else
+                            resDivision =   x/y;
+
 End;
 
 Begin
