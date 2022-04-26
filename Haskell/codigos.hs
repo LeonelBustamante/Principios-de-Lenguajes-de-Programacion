@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+{- FORMATTER: https://hexagoxel.de/brittany/ -}
+>>>>>>> 3cdfcf8d6177bb73815bf4c27a306b7ded3796d8
 main :: IO ()
 main = putStrLn "Hello World!"
 
@@ -39,9 +43,15 @@ losCuatroIguales2 x y z w = allEqual x y z && x == w
 
 {- Ejercicio 4 -}
 cuantosIguales :: Int -> Int -> Int -> Int
+<<<<<<< HEAD
 cuantosIguales x y z | (x == y) && (y == z)             = 3
                      | (x == y) || (y == z) || (x == z) = 2
                      | otherwise                        = 0
+=======
+cuantosIguales x y z | (x == y) && (y == z)       = 3
+                     | (x == y) (y == z) (x == z) = 2
+                     | otherwise                  = 0
+>>>>>>> 3cdfcf8d6177bb73815bf4c27a306b7ded3796d8
 
 cuantosIgualesDeDos :: Int -> Int -> Int
 cuantosIgualesDeDos x y | x == y    = 2
@@ -55,6 +65,7 @@ factorial :: Int -> Int
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
 
+<<<<<<< HEAD
 nAnd :: Bool -> Bool -> Bool
 nAnd a b = not(a == True && b == True)
 
@@ -85,3 +96,14 @@ octavaPotencia x = square(square(square(x)))
 {- 
 cuantosIgualesDeDos 3 3
 -}
+=======
+{- NO ME SALIO LA SUCESION-}
+
+nAnd :: Bool -> Bool -> Bool
+nAnd a b = not (a == True && b == True)
+
+sumatoria :: [Int] -> Int
+sumatoria [] = 0
+sumatoria (x : xs) | xs == [x] = x
+                   | otherwise = x + sumatoria xs
+>>>>>>> 3cdfcf8d6177bb73815bf4c27a306b7ded3796d8
