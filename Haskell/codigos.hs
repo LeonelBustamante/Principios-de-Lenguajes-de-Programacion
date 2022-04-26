@@ -1,4 +1,3 @@
-{- FORMATTER: https://hexagoxel.de/brittany/ -}
 main :: IO ()
 main = putStrLn "Hello World!"
 
@@ -56,22 +55,27 @@ factorial :: Int -> Int
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
 
+{- Ejercicio 6 -}
 nAnd :: Bool -> Bool -> Bool
-nAnd a b = not(a == True && b == True)
+nAnd a b = not (a == True && b == True)
 
+{- Ejercicio 8 -}
 allDiferent :: Int -> Int -> Int -> Bool
-allDiferent x y z = (x /= y) &&  (x /= z)
+allDiferent x y z = (x /= y) && (x /= z)
 
+{- Ejercicio 9 -}
 {- No esta bien por que x != z no se detecta -}
 allDiferent2 :: Int -> Int -> Int -> Bool
-allDiferent2 x y z = (x /= y) &&  (y /= z)
+allDiferent2 x y z = (x /= y) && (y /= z)
 
+{- Ejercicio 10 -}
 cuartaPotencia :: Int -> Int
-cuartaPotencia x = square(square(x)) 
+cuartaPotencia x = square (square (x))
 
 octavaPotencia :: Int -> Int
-octavaPotencia x = square(square(square(x))) 
+octavaPotencia x = square (square (square (x)))
 
+{- Ejercicio 11 -}
 {- 
 (max (2+3) (-7))+(1-3)
      ¯¯¯¯
@@ -79,10 +83,34 @@ octavaPotencia x = square(square(square(x)))
 (max 5 -7) + -2
 ¯¯¯¯¯¯¯¯¯
 ?? n > m = 5
-5 + 2 
+5 + (-2) 
 = 3
 -}
 
 {- 
 cuantosIgualesDeDos 3 3
+?? x == y = 2
+2
 -}
+
+{- 
+cuantosIguales 1 4 3
+?? (1 == 4) && (4 == 3)= 3
+?? False && False
+?? (1 == 4) || (4 == 3) || (1 == 3) = 2
+?? False || False || False
+?? otherwise = 0
+0
+ -}
+
+{- 
+allForEqual 5 6 4 5
+?? 5 == 6 && 6 == 4 && 4 == 5
+?? False && False && False
+-}
+
+{- Ejercicio 12 -}
+valorNumerico :: Char -> Int
+valorNumerico x = ord x
+
+{- FORMATTER: https://hexagoxel.de/brittany/ -}
