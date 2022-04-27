@@ -39,9 +39,9 @@ losCuatroIguales2 x y z w = allEqual x y z && x == w
 
 {- Ejercicio 4 -}
 cuantosIguales :: Int -> Int -> Int -> Int
-cuantosIguales x y z | (x == y) && (y == z)             = 3
-                     | (x == y) || (y == z) || (x == z) = 2
-                     | otherwise                        = 0
+cuantosIguales x y z | (x == y) && (y == z)       = 3
+                     | (x == y) (y == z) (x == z) = 2
+                     | otherwise                  = 0
 
 cuantosIgualesDeDos :: Int -> Int -> Int
 cuantosIgualesDeDos x y | x == y    = 2
@@ -51,7 +51,7 @@ cuantosIgualesDeDos x y | x == y    = 2
 fibonacciPos10 :: Int
 fibonacciPos10 = fib 10
 
-factorial :: Int -> Int
+factorial :: Double -> Double
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
 
@@ -76,6 +76,24 @@ octavaPotencia :: Int -> Int
 octavaPotencia x = square (square (square (x)))
 
 {- Ejercicio 11 -}
+sucesion :: Int -> Int -> Double
+sucesion x n = sum / fact
+ where
+  sum  = fromIntegral (sumatoria n n)
+  fact = fromIntegral (factorial x)
+
+sumatoria :: Int -> Int -> Int
+sumatoria i n | i < 1  = 0
+              | i == 1 = 1
+              | i > 1  = termino + (sumatoria (i - 1) n)
+  where termino = i ^ n
+{- ** Float o Double -}
+
+factorial :: Int -> Int
+factorial n | n == 1    = 1
+            | n < 1     = 1
+            | otherwise = n * factorial (n - 1)
+
 {- 
 (max (2+3) (-7))+(1-3)
      ¯¯¯¯
@@ -86,31 +104,27 @@ octavaPotencia x = square (square (square (x)))
 5 + (-2) 
 = 3
 -}
-
 {- 
 cuantosIgualesDeDos 3 3
 ?? x == y = 2
 2
 -}
-
 {- 
 cuantosIguales 1 4 3
 ?? (1 == 4) && (4 == 3)= 3
 ?? False && False
-?? (1 == 4) || (4 == 3) || (1 == 3) = 2
-?? False || False || False
+?? (1 == 4)  (4 == 3)  (1 == 3) = 2
+?? False  False  False
 ?? otherwise = 0
 0
  -}
-
 {- 
 allForEqual 5 6 4 5
 ?? 5 == 6 && 6 == 4 && 4 == 5
 ?? False && False && False
 -}
-
 {- Ejercicio 12 -}
 valorNumerico :: Char -> Int
-valorNumerico x = ord x
+valorNumerico x = 0
 
 {- FORMATTER: https://hexagoxel.de/brittany/ -}
