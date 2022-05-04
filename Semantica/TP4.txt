@@ -1,1 +1,0 @@
-1. ¿Todos los lenguajes de programación tienen semántica? ¿Cuál es la utilidad de definir la pragmática? Ejemplifique.
