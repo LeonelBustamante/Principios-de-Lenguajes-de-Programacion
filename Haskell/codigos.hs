@@ -11,7 +11,7 @@ yes :: Bool
 yes = True
 
 greater :: Bool
-greater = (answer > 71)
+greater = answer > 71
 
 square :: Int -> Int
 square x = x * x
@@ -39,25 +39,40 @@ losCuatroIguales2 x y z w = allEqual x y z && x == w
 
 {- Ejercicio 4 -}
 cuantosIguales :: Int -> Int -> Int -> Int
-cuantosIguales x y z | (x == y) && (y == z)       = 3
-                     | (x == y) (y == z) (x == z) = 2
-                     | otherwise                  = 0
+cuantosIguales x y z | (x == y) && (y == z)             = 3
+                     | (x == y) || (y == z) || (x == z) = 2
+                     | otherwise                        = 0
 
 cuantosIgualesDeDos :: Int -> Int -> Int
 cuantosIgualesDeDos x y | x == y    = 2
                         | otherwise = 0
 
-{- Ejercicio 5 -}
+{- Ejercicio 5 a-}
 fibonacciPos10 :: Int
 fibonacciPos10 = fib 10
 
-factorial :: Double -> Double
-factorial 0 = 1
-factorial n = n * factorial (n - 1)
+{- Ejercicio 5 b -}
+factorial :: Int -> Int
+factorial n | n == 1    = 1
+            | n < 1     = 1
+            | otherwise = n * factorial (n - 1)
+
+{- Ejercicio 5 c -}
+sucesion :: Int -> Int -> Double
+sucesion x n = sum / fact
+ where
+  sum  = fromIntegral (sumatoria n n)
+  fact = fromIntegral (factorial x)
+
+sumatoria :: Int -> Int -> Int
+sumatoria i n | i < 1  = 0
+              | i == 1 = 1
+              | i > 1  = termino + (sumatoria (i - 1) n)
+  where termino = i ^ n
 
 {- Ejercicio 6 -}
 nAnd :: Bool -> Bool -> Bool
-nAnd a b = not (a == True && b == True)
+nAnd a b = not a && not b
 
 {- Ejercicio 8 -}
 allDiferent :: Int -> Int -> Int -> Bool
@@ -76,24 +91,6 @@ octavaPotencia :: Int -> Int
 octavaPotencia x = square (square (square (x)))
 
 {- Ejercicio 11 -}
-sucesion :: Int -> Int -> Double
-sucesion x n = sum / fact
- where
-  sum  = fromIntegral (sumatoria n n)
-  fact = fromIntegral (factorial x)
-
-sumatoria :: Int -> Int -> Int
-sumatoria i n | i < 1  = 0
-              | i == 1 = 1
-              | i > 1  = termino + (sumatoria (i - 1) n)
-  where termino = i ^ n
-{- ** Float o Double -}
-
-factorial :: Int -> Int
-factorial n | n == 1    = 1
-            | n < 1     = 1
-            | otherwise = n * factorial (n - 1)
-
 {- 
 (max (2+3) (-7))+(1-3)
      ¯¯¯¯
@@ -123,8 +120,52 @@ allForEqual 5 6 4 5
 ?? 5 == 6 && 6 == 4 && 4 == 5
 ?? False && False && False
 -}
+
 {- Ejercicio 12 -}
 valorNumerico :: Char -> Int
-valorNumerico x = 0
+valorNumerico x | fromEnum x < 58 && fromEnum x > 47 = fromEnum x
+                | otherwise                          = -1
+
+{- Ejercicio 13 -}
+digitoRomano :: Char -> String
+digitoRomano x = case x of
+  '0' -> "0"
+  '1' -> "I"
+  '2' -> "II"
+  '3' -> "III"
+  '4' -> "IV"
+  '5' -> "V"
+  '6' -> "VI"
+  '7' -> "VII"
+  '8' -> "VIII"
+  '9' -> "IX"
+
+{- Ejercicio 14 -}
+entreLineas :: String -> String -> String -> String
+entreLineas x y z = x ++ "\n" ++ y ++ "\n" ++ z
+
+{- Ejercicio 15 -}
+duplicar :: String -> Int -> String
+duplicar x n | n < 1     = ""
+             | otherwise = x ++ duplicar x (n - 1)
+
+{- Ejercicio 16 -}
+hacerEspacios :: Int -> String
+hacerEspacios x = duplicar " " x
+
+{- Ejercicio 17 TERMINAR-}
+factorialTable :: Int -> Int -> String
+factorialTable n m | n == m = ""
+
+{- Ejercicio 18 -}
+justificarCentro :: Int -> String -> String
+justificarCentro x st = hacerEspacios x ++ st ++ hacerEspacios x
+
+justificarCentroWhere :: Int -> String -> String
+justificarCentroWhere x st = espacio ++ cadena ++ espacio
+ where
+  espacio = hacerEspacios x
+  cadena  = st
+
 
 {- FORMATTER: https://hexagoxel.de/brittany/ -}
