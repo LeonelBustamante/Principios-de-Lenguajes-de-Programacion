@@ -153,9 +153,11 @@ duplicar x n | n < 1     = ""
 hacerEspacios :: Int -> String
 hacerEspacios x = duplicar " " x
 
-{- Ejercicio 17 TERMINAR-}
+{- Ejercicio 17 -}
 factorialTable :: Int -> Int -> String
-factorialTable n m | n == m = ""
+factorialTable n m    | n == m = show (factorial n) ++ " "
+                      | n < m = factorialTable n (m-1) ++ " " ++ show (factorial m)
+                      | otherwise = "N ES MAYOR A M"
 
 {- Ejercicio 18 -}
 justificarCentro :: Int -> String -> String
