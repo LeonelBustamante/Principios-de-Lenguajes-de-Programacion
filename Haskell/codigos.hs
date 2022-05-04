@@ -155,9 +155,10 @@ hacerEspacios x = duplicar " " x
 
 {- Ejercicio 17 -}
 factorialTable :: Int -> Int -> String
-factorialTable n m    | n == m = show (factorial n) ++ " "
-                      | n < m = factorialTable n (m-1) ++ " " ++ show (factorial m)
-                      | otherwise = "N ES MAYOR A M"
+factorialTable n m
+  | n == m    = show (factorial n) ++ " "
+  | n < m     = factorialTable n (m - 1) ++ " " ++ show (factorial m)
+  | otherwise = "N ES MAYOR A M"
 
 {- Ejercicio 18 -}
 justificarCentro :: Int -> String -> String
@@ -168,6 +169,29 @@ justificarCentroWhere x st = espacio ++ cadena ++ espacio
  where
   espacio = hacerEspacios x
   cadena  = st
+
+{- Ejercicio 19 NO ME QUEDO CLARO-}
+-- 19. Definir una funci´on minMax la cual retorne el m´ınimo y el m´aximo de una tupla.
+
+{- Ejercicio 20 -}
+maxOcurr :: Int -> Int -> (Int,Int)
+maxOcurr x y  | x==y = (x,2)
+              | x>y = (x, 1)
+              | otherwise = (y, 1)
+
+{- 
+maxOcurr :: Int -> Int -> Int -> (Int,Int)
+maxOcurr x y z = case cuantosIguales x y z of
+  3 -> (x,3)
+  2 -> if x==y then (x,2) else if  x==z then (z,2) else (y,2)
+  0 -> (mayor (mayor x y) z,1)
+                
+mayor :: Int -> Int -> Int
+mayor x y |x>y = x
+          |otherwise= y 
+mayor :: Int -> Int -> Int -> Int
+mayor x y z = (mayor (mayor x y) z)
+-}
 
 
 {- FORMATTER: https://hexagoxel.de/brittany/ -}
