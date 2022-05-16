@@ -171,27 +171,14 @@ justificarCentroWhere x st = espacio ++ cadena ++ espacio
   cadena  = st
 
 {- Ejercicio 19 NO ME QUEDO CLARO-}
--- 19. Definir una funci´on minMax la cual retorne el m´ınimo y el m´aximo de una tupla.
+minMax :: (Int, Int) -> (Int, Int)
+minMax (a, b) | a < b     = (b, a)
+              | otherwise = (a, b)
 
 {- Ejercicio 20 -}
-maxOcurr :: Int -> Int -> (Int,Int)
-maxOcurr x y  | x==y = (x,2)
-              | x>y = (x, 1)
-              | otherwise = (y, 1)
-
-{- 
-maxOcurr :: Int -> Int -> Int -> (Int,Int)
-maxOcurr x y z = case cuantosIguales x y z of
-  3 -> (x,3)
-  2 -> if x==y then (x,2) else if  x==z then (z,2) else (y,2)
-  0 -> (mayor (mayor x y) z,1)
-                
-mayor :: Int -> Int -> Int
-mayor x y |x>y = x
-          |otherwise= y 
-mayor :: Int -> Int -> Int -> Int
-mayor x y z = (mayor (mayor x y) z)
--}
-
+maxOcurr :: Int -> Int -> (Int, Int)
+maxOcurr x y | x == y    = (x, 2)
+             | x > y     = (x, 1)
+             | otherwise = (y, 1)
 
 {- FORMATTER: https://hexagoxel.de/brittany/ -}
